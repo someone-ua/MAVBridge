@@ -1,0 +1,132 @@
+menu "MAVBridge Configuration"
+
+    config  MODEM_INET_SERVER_IP
+        string "Intenet Server IP"
+        default "0.0.0.0"
+        help
+            IP address of remove server
+    config  MODEM_INET_SERVER_PORT
+        int "Internet Server Port"
+        default 14550
+        help
+            Port number of remote server
+    config MODEM_PPP_APN
+        string "Set MODEM APN"
+        default "internet"
+        help
+            Set APN (Access Point Name), a logical name to choose data network
+
+    config FC_UART_TX_PIN
+        int "FC TXD Pin Number"
+        default 14
+        range 0 31
+        help
+            Pin number of UART TX.
+
+    config FC_UART_RX_PIN
+        int "FC RXD Pin Number"
+        default 12
+        range 0 31
+        help
+            Pin number of UART RX.
+
+    config  FC_UART_BAUDRATE
+        int "FC UART Baudrate"
+        default  115200
+        range  50 921600
+        help
+            Baud rate for FC UART
+
+    menu "Wireguard Configuration"
+        config WG_PRIVATE_KEY
+            string "Wireguard Private Key"
+            default "IsvT72MAXzA8EtV0FSD1QT59B4x0oe6Uea5rd/dDzhE="
+            help
+                Private key of the WireGuard device.
+
+        config WG_LOCAL_IP_ADDRESS
+            string "Wireguard local IP address"
+            default "192.168.4.58"
+            help
+                Local IP address of the WireGuard device.
+
+        config WG_LOCAL_IP_NETMASK
+            string "Wireguard local netmask"
+            default "255.255.255.0"
+            help
+                Netmask of the local network the WireGuard device belongs to.
+
+        config WG_LOCAL_PORT
+            int "Wireguard local port"
+            default 11010
+            help
+                Local port to listen.
+
+        config WG_PEER_PUBLIC_KEY
+            string "Wireguard remote peer public key"
+            default "FjrsQ/HD1Q8fUlFILIasDlOuajMeZov4NGqMJpkswiw="
+            help
+                Public key of the remote peer.
+
+        config WG_PRESHARED_KEY
+            string "Wireguard pre-shared symmetric key"
+            default "0/2H97Sd5EJ9LAAAYUglVjPYv7ihNIm/ziuv6BtSI50="
+            help
+                Public key of the remote peer.
+
+        config WG_PEER_ADDRESS
+            string "Wireguard remote peer address"
+            default "demo.wireguard.com"
+            help
+                Address of the remote peer.
+
+        config WG_PEER_PORT
+            int "Wireguard remote peer port"
+            default 12912
+            help
+                Port number of the remote peer.
+
+        config WG_PERSISTENT_KEEP_ALIVE
+            int "Interval to send an authenticated empty packet"
+            default 0
+            help
+                A seconds interval, between 1 and 65535 inclusive, of how often to
+                send an authenticated empty packet to the peer for the purpose of
+                keeping a stateful firewall or NAT mapping valid persistently
+    endmenu
+
+    menu "Modem UART Configuration"
+        config MODEM_UART_TX_PIN
+            int "TXD Pin Number"
+            default 27
+            range 0 31
+            help
+                Pin number of UART TX.
+
+        config MODEM_UART_RX_PIN
+            int "RXD Pin Number"
+            default 26
+            range 0 31
+            help
+                Pin number of UART RX.
+        config MODEM_POWER_PIN
+            int "Modem Power Pin Number"
+            default 23
+            range  0 31
+            help
+                Pin number of Modem power
+        config  MODEM_RESET_PIN
+            int "Modem Reset Pin"
+            default 5
+            range 0 31
+            help
+                Pin number of Modem reset
+        config  MODEM_PWKEY_PIN
+            int "Modem Power Key Pin"
+            default 4
+            range  0 31
+            help
+                Pin number of Modem power key
+    endmenu
+
+endmenu

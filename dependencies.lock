@@ -1,0 +1,27 @@
+dependencies:
+  espressif/esp_modem:
+    component_hash: db634499298a3335367039b07838e9fcc1dd44e8c44bb67c2a6d7cc26b6d8ca4
+    source:
+      service_url: https://api.components.espressif.com/
+      type: service
+    version: 1.0.1
+  espressif/mavlink:
+    component_hash: 06bd18a376a5bcc5ff7d4dddfe1a704e1f32b9920e284d2fbd795377b0c1755d
+    source:
+      service_url: https://api.components.espressif.com/
+      type: service
+    version: 1.0.0~1
+  espressif/mdns:
+    component_hash: d6665090cf41eb399c184aab6f34234251a773e052fb53ca044dcb576264c646
+    source:
+      service_url: https://api.components.espressif.com/
+      type: service
+    version: 1.2.1
+  idf:
+    component_hash: null
+    source:
+      type: idf
+    version: 5.0.0
+manifest_hash: 48bd4e55dbad6e9f8d9dca4162182d425a5169c2eac29ea11e23785957ddca59
+target: esp32
+version: 1.0.0
